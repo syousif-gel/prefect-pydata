@@ -25,4 +25,4 @@ with Flow("s3_pandas", storage=STORAGE,
      say_hello()
 
 # Register the flow under the demo project called 04_fargate
-flow.register(project_name="poc_fargate")
+flow.register(project_name="cloudre")
