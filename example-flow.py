@@ -4,12 +4,12 @@ from prefect.run_configs import ECSRun
 from prefect import task, Flow
 import pandas as pd
 
-TASK_ARN = "arn:aws:iam::421126574751:role/ECSTaskS3ECRRole"
+TASK_ARN = "arn:aws:iam::008913701811:role/ECSTaskS3ECRRole"
 RUN_CONFIG = ECSRun(labels=['s3-flow-storge'],
 		    task_role_arn=TASK_ARN,
 		    image='syousif-gel/prefect-pydata',
                     memory=512, cpu=256)
-STORAGE = S3(buckets='prefect-sandbox-poc')
+STORAGE = S3(bucket='pprefect-gel-data-poc')
 
 
 @task
@@ -25,4 +25,4 @@ with Flow("s3_pandas", storage=STORAGE,
      say_hello()
 
 # Register the flow under the demo project called 04_fargate
-flow.register(project_name="04_fargate")
+flow.register(project_name="poc_fargate")
