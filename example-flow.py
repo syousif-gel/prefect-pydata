@@ -9,7 +9,7 @@ RUN_CONFIG = ECSRun(labels=['s3-flow-storge'],
 		    task_role_arn=TASK_ARN,
 		    image='syousif-gel/prefect-pydata',
                     memory=512, cpu=256)
-STORAGE = S3(bucket='pprefect-gel-data-poc')
+STORAGE = S3(bucket='prefect-gel-data-poc')
 
 
 @task
